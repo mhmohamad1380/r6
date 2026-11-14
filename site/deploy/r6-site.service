@@ -1,0 +1,26 @@
+[Unit]
+Description=R6 Coach website (downloads, guide, one-time tokens)
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+User=r6replay
+WorkingDirectory=/opt/r6-site
+Environment=R6_SITE_DOWNLOADS=/opt/r6-site/downloads
+Environment=R6_SITE_STATE=/var/lib/r6-site
+Environment=R6_SITE_TOKENS=/var/lib/r6-replay/tokens.json
+Environment=R6_SITE_PUBLIC_URL=https://r6.cyruson.ir
+ExecStart=/opt/r6-replay-server/venv/bin/uvicorn app.server:load --factory --host 172.18.0.1 --port 8091 --proxy-headers --forwarded-allow-ips=*
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/r6-site
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+
+[Install]
+WantedBy=multi-user.target

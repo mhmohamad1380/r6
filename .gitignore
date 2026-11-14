@@ -1,0 +1,20 @@
+# built releases (publish these as GitHub releases, not in the code)
+/dist/
+
+# build output and caches
+build/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+*.bak
+
+# secrets: never commit
+key.properties
+local.properties
+*.jks
+*.keystore
+*.pem
+.env
+.env.*
+tokens.json

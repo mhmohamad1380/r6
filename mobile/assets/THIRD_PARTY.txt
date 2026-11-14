@@ -1,0 +1,7 @@
+counters.json
+  Derived from https://github.com/BurkusCat/r6-operator-counters (MIT License).
+  Copyright (c) BurkusCat. Counter relationships were extracted from the project's
+  operator definition files.
+
+game_operators.json
+  Operator names, roles and sides from the Arenyze (R6Data) API.

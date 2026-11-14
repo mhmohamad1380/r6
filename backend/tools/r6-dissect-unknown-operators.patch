@@ -1,0 +1,51 @@
+diff -ru /tmp/dissect.orig/header.go dissect/header.go
+--- /tmp/dissect.orig/header.go	2026-10-31 20:19:16.689431991 +0330
++++ dissect/header.go	2026-10-31 20:19:16.807318291 +0330
+@@ -555,8 +555,8 @@
+ 	}
+ 	r.Header.Players = players
+ 	for _, p := range r.Header.Players {
+-		if p.Operator == Recruit {
+-			continue
++		if p.Operator == Recruit || !p.Operator.RoleKnown() {
++			continue // an operator newer than the table says nothing about the sides; another player will
+ 		}
+ 		role := p.Operator.Role()
+ 		teamIndex := p.TeamIndex
+diff -ru /tmp/dissect.orig/operator_roles.go dissect/operator_roles.go
+--- /tmp/dissect.orig/operator_roles.go	2026-10-31 20:19:16.689741666 +0330
++++ dissect/operator_roles.go	2026-10-31 20:19:16.807138091 +0330
+@@ -88,3 +88,9 @@
+ 	}
+ 	panic(fmt.Sprintf("role unknown for operator ID %d", i))
+ }
++
++// RoleKnown reports whether this operator is in the table. New operators appear in game updates before the table does.
++func (i Operator) RoleKnown() bool {
++	_, ok := _operatorRoles[i]
++	return ok
++}
+diff -ru /tmp/dissect.orig/player.go dissect/player.go
+--- /tmp/dissect.orig/player.go	2026-10-31 20:19:16.689850991 +0330
++++ dissect/player.go	2026-10-31 20:19:16.807771472 +0330
+@@ -137,7 +137,7 @@
+ 		DissectID: id,
+ 		uiID:      uiID,
+ 	}
+-	if p.Operator != Recruit && p.Operator.Role() == Defense {
++	if p.Operator != Recruit && p.Operator.RoleKnown() && p.Operator.Role() == Defense {
+ 		p.Spawn = r.Header.Site // We cannot detect the spawn here on defense
+ 	}
+ 	log.Debug().Str("username", username).
+diff -ru /tmp/dissect.orig/site.go dissect/site.go
+--- /tmp/dissect.orig/site.go	2026-10-31 20:19:16.690079841 +0330
++++ dissect/site.go	2026-10-31 20:19:16.807923753 +0330
+@@ -32,7 +32,7 @@
+ 		log.Debug().Str("site", formatted).Msg("defense site")
+ 		for i, p := range r.Header.Players {
+ 			defenseTeam := r.Header.Teams[p.TeamIndex].Role == Defense
+-			defenseRole := p.Operator != Recruit && p.Operator != 0 && p.Operator.Role() == Defense
++			defenseRole := p.Operator != Recruit && p.Operator != 0 && p.Operator.RoleKnown() && p.Operator.Role() == Defense
+ 			if defenseTeam || defenseRole {
+ 				r.Header.Players[i].Spawn = formatted
+ 			}

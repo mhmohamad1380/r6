@@ -1,0 +1,19 @@
+#!/opt/r6-replay-server/venv/bin/python
+"""Lets a network address get its tokens again.   r6-site-reset 203.0.113.7     r6-site-reset --all     r6-site-reset --count"""
+import os
+import sys
+
+sys.path.insert(0, "/opt/r6-site")
+from app.server import Issued, network_key  # noqa: E402
+
+issued = Issued(__import__("pathlib").Path(os.environ.get("R6_SITE_STATE", "/var/lib/r6-site")) / "issued.json")
+arg = sys.argv[1] if len(sys.argv) > 1 else ""
+if arg == "--all":
+    print(f"cleared {issued.clear()} address(es)")
+elif arg == "--count":
+    print(len(issued.data), "address(es) have received tokens")
+elif arg:
+    print("freed" if issued.forget(network_key(arg)) else "that address had not received tokens")
+else:
+    print(__doc__)
+    sys.exit(2)

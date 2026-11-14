@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>R6 Coach: know why you win or lose</title>
+<meta name="description" content="A coach for Rainbow Six Siege that learns from your own replays. Scores every match, tells you what to work on. No accounts, no keys. Android app and Windows uploader.">
+<meta name="theme-color" content="#090c11">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<script src="/assets/app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href="#top" aria-label="R6 Coach, back to the top">
+      <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#121821"/><path d="M16 7 5 12l11 5 11-5-11-5Zm-6 8.2V20c0 1.7 2.7 3.5 6 3.5s6-1.8 6-3.5v-4.8l-6 2.7-6-2.7Z" fill="#38bdf8"/></svg>
+      <span>R6 Coach</span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#download">Download</a>
+      <a href="#how">Guide</a>
+      <a href="#tokens">Tokens</a>
+      <a href="#help">Help</a>
+      <a href="/account">My matches</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero wrap" id="top">
+    <div class="hero-copy">
+      <p class="eyebrow">Rainbow Six Siege</p>
+      <h1>Know <em>why</em> you win or lose.</h1>
+      <p class="lead">R6 Coach reads your own match replays, scores every game against your usual level, and tells you the one thing to work on next. The app needs no account and no keys; an optional web account lets you see your matches in a browser too.</p>
+      <div class="cta">
+        <a class="btn primary" href="#download">Download the apps</a>
+        <a class="btn ghost" href="#how">See how it works</a>
+      </div>
+      <ul class="chips" aria-label="Highlights">
+        <li>No sign-up for the app</li>
+        <li>No API keys</li>
+        <li>Works from your replays</li>
+      </ul>
+    </div>
+    <div class="mock" aria-hidden="true">
+      <div class="mock-head"><span class="dot"></span><span>Match Coach</span></div>
+      <div class="mock-score">
+        <div class="ring"><b>62</b><small>of 100</small></div>
+        <div>
+          <strong class="amber">Above average</strong>
+          <p>You are improving: 9 points up on your older matches.</p>
+        </div>
+      </div>
+      <div class="mock-card warn">
+        <b>Half your deaths gave nothing</b>
+        <span>Try this: play 3 rounds where you only take fights within sight of a teammate.</span>
+      </div>
+      <div class="mock-row"><span class="pill good">Won 4–2</span><span class="pill">+18 vs usual</span><span>Consulate</span></div>
+    </div>
+  </section>
+
+  <section class="wrap block" id="download" aria-labelledby="dl-h">
+    <h2 id="dl-h">Download</h2>
+    <p class="sub">Two small apps. The Windows one runs on the PC where you play and sends your replays. The Android one is your coach.</p>
+    <div class="cards">
+      <article class="card" data-file="r6-coach.apk">
+        <div class="card-top">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm5 18.2a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2ZM7 5v11h10V5H7Z"/></svg>
+          <div><h3>Android app</h3><p class="meta" data-meta>Checking…</p></div>
+        </div>
+        <p>Your Match Coach: a score for every game, what to work on, and a plan for your next session.</p>
+        <a class="btn primary block-btn" href="/downloads/r6-coach.apk" download data-dl>Download APK</a>
+        <details>
+          <summary>How to install</summary>
+          <ol class="plain">
+            <li>Open the downloaded file. If Android asks, allow your browser to <b>install unknown apps</b>.</li>
+            <li>Tap <b>Install</b>, then open <b>R6 Coach</b>.</li>
+          </ol>
+        </details>
+        <details>
+          <summary>Check the file</summary>
+          <p class="hash-label">SHA-256 <button class="copy small" type="button" data-copy-hash>Copy</button></p>
+          <code class="hash" data-hash>…</code>
+        </details>
+      </article>
+
+      <article class="card" data-file="R6ReplayUploader-windows.zip">
+        <div class="card-top">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5 11 4v7H3V5.5Zm9-1.7L21 2v9h-9V3.8ZM3 12.5h8V20l-8-1.5v-6Zm9 0h9V22l-9-1.7v-7.8Z"/></svg>
+          <div><h3>Windows uploader</h3><p class="meta" data-meta>Checking…</p></div>
+        </div>
+        <p>One program for your gaming PC. It sits in the tray, reads each match replay there and sends only a few kilobytes of statistics. It can also record your best moments as video clips while you play, which then play in the phone app. Nothing else to install: no OBS needed.</p>
+        <a class="btn primary block-btn" href="/downloads/R6ReplayUploader-windows.zip" download data-dl>Download for Windows</a>
+        <details>
+          <summary>How to open it</summary>
+          <ol class="plain">
+            <li>Unzip the folder anywhere, then open <b>R6ReplayUploader.exe</b>. That one file is the whole program: the replay reader and the clip cutter are inside it.</li>
+            <li>Windows may say it protected your PC, because the app is not code-signed. Choose <b>More info</b>, then <b>Run anyway</b>.</li>
+          </ol>
+        </details>
+        <details>
+          <summary>Check the file</summary>
+          <p class="hash-label">SHA-256 <button class="copy small" type="button" data-copy-hash>Copy</button></p>
+          <code class="hash" data-hash>…</code>
+        </details>
+        <details>
+          <summary>Live clips while you play (optional)</summary>
+          <ol class="plain">
+            <li>In the uploader tick <b>Record live clips while I play</b>. It records the screen itself while Siege runs: no OBS needed.</li>
+            <li>Play Siege in <b>Borderless</b> display mode, so the screen can be recorded.</li>
+            <li>After each round your best moments are cut and appear in the app under <b>Matches &gt; Clips</b>.</li>
+            <li>Once per game mode, press <b>F8</b> when a round's timer starts, so clips are timed exactly.</li>
+          </ol>
+        </details>
+        <details>
+          <summary>Clips from a replay (optional)</summary>
+          <ol class="plain">
+            <li>In the uploader press <b>Clips from replays, and recording settings</b>, pick a match and press <b>Find highlights</b>.</li>
+            <li>Press <b>Start recording</b>, play that match's replay in Siege, and press <b>F9</b> when each listed round's timer starts.</li>
+            <li>Press <b>Stop recording</b>, then <b>Cut and upload</b>. The clips appear in the app under <b>Matches &gt; Clips</b>.</li>
+          </ol>
+          <p class="older">The uploader never touches the game: it records the screen and reads the replay files. Clips need Windows 8 or newer.</p>
+        </details>
+        <p class="older">Windows 7 or 8? <a href="/downloads/R6ReplayUploader-1.1.0-windows7.zip" download>Get version 1.1.0</a>. It sends the whole replay files instead of reading them on your PC.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap block" id="how" aria-labelledby="how-h">
+    <h2 id="how-h">How it works</h2>
+    <p class="sub">Siege saves a replay file for every round, but only for your last 10 to 12 matches. The uploader reads them on your PC, the server keeps the statistics, and the coach turns them into advice.</p>
+
+    <figure class="flow">
+      <svg class="flow-v" viewBox="0 0 300 330" role="img" aria-label="Your PC sends replays to the server, and the server sends small statistics to your phone.">
+        <defs><marker id="av" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0l10 5-10 5Z" fill="#8a96a8"/></marker></defs>
+        <g class="node"><rect x="20" y="8" width="260" height="76" rx="16"/><text x="150" y="42">Your PC</text><text x="150" y="66" class="small">reads the replays</text></g>
+        <g class="node"><rect x="20" y="124" width="260" height="76" rx="16"/><text x="150" y="158">This server</text><text x="150" y="182" class="small">keeps the statistics</text></g>
+        <g class="node"><rect x="20" y="240" width="260" height="76" rx="16"/><text x="150" y="274">Your phone</text><text x="150" y="298" class="small">scores and advice</text></g>
+        <path class="arrow" d="M150 86v34" marker-end="url(#av)"/><path class="arrow" d="M150 202v34" marker-end="url(#av)"/>
+      </svg>
+      <svg class="flow-h" viewBox="0 0 720 150" role="img" aria-label="Your PC sends replays to the server, and the server sends small statistics to your phone.">
+        <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0l10 5-10 5Z" fill="#8a96a8"/></marker></defs>
+        <g class="node"><rect x="10" y="30" width="190" height="90" rx="16"/><text x="105" y="70">Your PC</text><text x="105" y="94" class="small">reads the replays</text></g>
+        <g class="node"><rect x="265" y="30" width="190" height="90" rx="16"/><text x="360" y="70">This server</text><text x="360" y="94" class="small">keeps the statistics</text></g>
+        <g class="node"><rect x="520" y="30" width="190" height="90" rx="16"/><text x="615" y="70">Your phone</text><text x="615" y="94" class="small">scores and advice</text></g>
+        <path class="arrow" d="M202 75h60" marker-end="url(#ah)"/><path class="arrow" d="M457 75h60" marker-end="url(#ah)"/>
+      </svg>
+    </figure>
+
+    <ol class="steps">
+      <li><div><h3>Install the uploader on your PC</h3><p>Download the Windows app above. It finds your replay folder and watches it. Each new replay is read on your PC and only its few kilobytes of statistics are sent.</p></div></li>
+      <li><div><h3>Get your tokens</h3><p>A token is a password for this server. Take yours below. You need one for the PC and one for the phone.</p></div></li>
+      <li><div><h3>Install the Android app</h3><p>Open it, follow the three short steps, and enter the server address and your phone token.</p></div></li>
+      <li><div><h3>Play. Open the Coach.</h3><p>After each match, your replays arrive in a minute or two. The Coach scores the game against your own usual level and tells you what to try next.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="wrap block" id="tokens" aria-labelledby="tk-h">
+    <h2 id="tk-h">Get your tokens</h2>
+    <p class="sub">One for the Windows uploader, one for the phone app. They are shown once for your network address, so save them right away.</p>
+
+    <div class="token-box" data-token-box aria-live="polite">
+      <div data-state="loading" class="state"><p>Checking…</p></div>
+
+      <div data-state="ready" class="state" hidden>
+        <p>Press the button and your tokens appear here. Keep them private: anyone who has them can use this server.</p>
+        <button class="btn primary" type="button" data-get>Show my tokens</button>
+      </div>
+
+      <div data-state="shown" class="state" hidden>
+        <p class="warn-note"><b>Shown only once.</b> Copy them now, or save them as a file.</p>
+        <dl class="fields">
+          <div class="field"><dt><label for="f-server">Server address</label><span class="for">both apps</span></dt>
+            <dd><input id="f-server" type="text" readonly data-field="serverUrl"><button class="copy" type="button" data-copy="serverUrl">Copy</button></dd></div>
+          <div class="field"><dt><label for="f-up">Upload token</label><span class="for">Windows uploader</span></dt>
+            <dd><input id="f-up" type="password" readonly autocomplete="off" data-field="uploadToken"><button class="copy" type="button" data-toggle="uploadToken" aria-label="Show or hide the upload token">Show</button><button class="copy" type="button" data-copy="uploadToken">Copy</button></dd></div>
+          <div class="field"><dt><label for="f-rd">Phone token</label><span class="for">Android app</span></dt>
+            <dd><input id="f-rd" type="password" readonly autocomplete="off" data-field="readToken"><button class="copy" type="button" data-toggle="readToken" aria-label="Show or hide the phone token">Show</button><button class="copy" type="button" data-copy="readToken">Copy</button></dd></div>
+        </dl>
+        <button class="btn ghost" type="button" data-save>Save as a text file</button>
+        <p class="copied" role="status" data-copied></p>
+      </div>
+
+      <div data-state="used" class="state" hidden>
+        <p><b>Tokens were already given to this network address.</b> For safety they are only shown once. If you saved them, use those. If you lost them, ask the person who runs this server.</p>
+      </div>
+
+      <div data-state="error" class="state" hidden>
+        <p class="err" data-error>Something went wrong.</p>
+        <button class="btn ghost" type="button" data-retry>Try again</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap block" id="setup" aria-labelledby="su-h">
+    <h2 id="su-h">Set up each device</h2>
+    <div class="tabs" role="tablist" aria-label="Device">
+      <button role="tab" id="tab-pc" aria-selected="true" aria-controls="panel-pc" type="button">On your PC</button>
+      <button role="tab" id="tab-phone" aria-selected="false" aria-controls="panel-phone" tabindex="-1" type="button">On your phone</button>
+    </div>
+    <div role="tabpanel" id="panel-pc" aria-labelledby="tab-pc" class="panel">
+      <ol class="steps compact">
+        <li><div><h3>Open the uploader</h3><p>Unzip it and open <b>R6ReplayUploader.exe</b>.</p></div></li>
+        <li><div><h3>Fill in the form</h3><p><b>Server address</b> and <b>Upload token</b> from the section above. For <b>Replay folder</b>, press <b>Find</b>. It is the folder named <b>MatchReplay</b> inside the game's install folder, which holds one folder per match.</p></div></li>
+        <li><div><h3>Press Save and start</h3><p>It uploads every replay the server does not have yet, then watches for new ones. A progress bar and a log show each upload with its speed.</p></div></li>
+        <li><div><h3>Leave it running</h3><p>Closing the window keeps it in the tray. Tick <b>Start with Windows</b> to never think about it again.</p></div></li>
+      </ol>
+    </div>
+    <div role="tabpanel" id="panel-phone" aria-labelledby="tab-phone" class="panel" hidden>
+      <ol class="steps compact">
+        <li><div><h3>Install and open the app</h3><p>It starts with a short guide.</p></div></li>
+        <li><div><h3>Your name</h3><p>Type your Ubisoft name, or skip. The app reads it from your replays.</p></div></li>
+        <li><div><h3>Connect to the server</h3><p>Enter the <b>Server address</b> and your <b>Phone token</b> (not the upload token), then press <b>Connect</b>.</p></div></li>
+        <li><div><h3>Open the Coach tab</h3><p>Once your first replays arrive you get a score, a review of each match, and a plan.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="wrap block" id="help" aria-labelledby="hp-h">
+    <h2 id="hp-h">Help</h2>
+    <div class="faq">
+      <details><summary>Do I need an account or an API key?</summary><p>No. The coach works only from your own replay files. There is an optional extra in the app for lifetime stats, but nothing depends on it.</p></details>
+      <details><summary>Where are my replay files?</summary><p>In a folder called <b>MatchReplay</b> inside Siege's install folder, for example <code>…\Tom Clancy's Rainbow Six Siege\MatchReplay</code>. It is created after your first recorded match. The game only keeps the last 10 to 12 matches, so keep the uploader running.</p></details>
+      <details><summary>What happens to my replays?</summary><p>The uploader reads each replay on your PC and sends only the small statistics (players in the match, kills, deaths, timings, results). The replay file itself stays on your PC. The one exception: if a replay cannot be read, for example after a game update, the file is sent whole (up to 20 MB) so it can be fixed; there is a checkbox in the uploader to turn that off. Statistics are available to anyone holding a phone token for this server, so do not treat it as private storage.</p></details>
+      <details><summary>The Windows app says nothing was uploaded</summary><p>Open the log (the <b>Open log file</b> button). It lists every file it looked at and why one was skipped. Check that the replay folder is the one that holds the match folders, and that the server address and token match.</p></details>
+      <details><summary>Some of my rounds failed to analyse</summary><p>New operators sometimes appear in the game before the replay reader knows them. Those rounds are marked failed and are read again after you update the uploader. If the uploader says <b>Please update your uploader</b>, download the newest version above.</p></details>
+      <details><summary>The phone says it cannot reach the server</summary><p>Check the address starts with <code>https://</code> and has no spaces, and that you used the <b>phone token</b>, not the upload token.</p></details>
+      <details><summary>Is this official?</summary><p>No. R6 Coach is an independent fan project and is not affiliated with or endorsed by Ubisoft. Rainbow Six and Siege are trademarks of Ubisoft Entertainment.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>R6 Coach · independent fan project, not affiliated with Ubisoft.</p>
+    <p><a href="#top">Back to the top</a></p>
+  </div>
+</footer>
+<noscript><p class="noscript">Downloads work without JavaScript. Getting tokens needs it.</p></noscript>
+</body>
+</html>
